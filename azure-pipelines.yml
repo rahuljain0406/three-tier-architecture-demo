@@ -23,12 +23,12 @@ stages:
     - task: DockerCompose@1
       inputs:
         containerregistrytype: 'Azure Container Registry'
-        dockerComposeFile: '**/docker-compose.yml'
+        dockerComposeFile: '**/docker-compose.yaml'
         action: 'Build services'
         additionalImageTags: '$(Build.BuildId)'
     - task: DockerCompose@1
       inputs:
         containerregistrytype: 'Azure Container Registry'
-        dockerComposeFile: '**/docker-compose.yml'
+        dockerComposeFile: '**/docker-compose.yaml'
         action: 'Push services'
         additionalImageTags: '$(Build.BuildId)'
