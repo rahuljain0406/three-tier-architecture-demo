@@ -26,9 +26,11 @@ stages:
         dockerComposeFile: '**/docker-compose.yaml'
         action: 'Build services'
         additionalImageTags: '$(Build.BuildId)'
+        projectName: aks_rahul
     - task: DockerCompose@1
       inputs:
         containerregistrytype: 'Azure Container Registry'
         dockerComposeFile: '**/docker-compose.yaml'
         action: 'Push services'
         additionalImageTags: '$(Build.BuildId)'
+        projectName: aks_rahul
